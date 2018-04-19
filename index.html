@@ -1,0 +1,111 @@
+<html>
+<head>
+    <style>
+        *{outline:none;}
+        body{
+            background:url(img/bgc2.png) no-repeat;background-size:cover;text-decoration:none;cursor:pointer;
+        }
+        #coded{width:190px;position:absolute;top:260;left:685px}
+       
+        #cone,#ctwo,#cthree{width:50px;height:50px;border-radius:2.5px;border:none;background:white;margin:1px;font-weight:bold;font-size:20;color:grey}
+        
+        button{width:35px;height:35px;border-radius:2.5px;border:none;background:white;margin:4px;font-weight:bold;font-size:20;color:grey}
+        
+        #hints{width:100%;position:absolute;top:495px;height:auto;}
+        .hint{
+            background:url(img/hintbg.svg) no-repeat; background-size:contain; padding:10px 17px;width:9%;margin:2px;
+        }
+        #hint1{position:absolute;left:490px}
+        #hint2{position:absolute;left:670px}
+        #hint3{position:absolute;left:850px}
+        #hint4{position:absolute;left:570px;top:100}
+        #hint5{position:absolute;left:750px;top:100}
+        #lock{width:90px;position:absolute;top:120px;left:720px}
+        #unlock{width:90px;position:absolute;top:120px;left:720px}
+    </style>
+    
+</head>
+    
+<body>
+    <img src="img/lock.svg" id='lock'>
+    <img src="img/unlock.svg" id='unlock'>
+    <div id="coded">
+    <button id="cone"></button>
+    <button id="ctwo"></button>
+        <button id="cthree"></button></div>
+    
+    <div id="hints">
+        <div id="hint1" class="hint">
+            <button id="h11">6</button>
+            <button id="h12">8</button>
+            <button id="h13">2</button>
+            <p style="text-align:center;color:white;font-family:Segoe UI;font-size:10px;margin-top:-1">One number is correct and well placed</p>
+        </div>
+        <div id="hint2" class="hint">
+            <button id="h21">6</button>
+            <button id="h22">1</button>
+            <button id="h23">4</button>
+            <p style="text-align:center;color:white;font-family:Segoe UI;font-size:10px;margin-top:-1">One number is correct but wrong placed</p>
+        </div>
+        <div id="hint3" class="hint">
+            <button id="h31">2</button>
+            <button id="h32">0</button>
+            <button id="h33">6</button>
+            <p style="text-align:center;color:white;font-family:Segoe UI;font-size:10px;margin-top:-1">Two numbers are correct but wrong placed</p>
+        </div>
+        <div id="hint4" class="hint">
+            <button id="h41">7</button>
+            <button id="h42">8</button>
+            <button id="h43">3</button>
+            <p style="text-align:center;color:white;font-family:Segoe UI;font-size:10px;margin-top:-1">Nothing is correct svddsgsdfrgdfgdrfgds</p>
+        </div>
+        <div id="hint5" class="hint">
+            <button id="h51">7</button>
+            <button id="h52">8</button>
+            <button id="h53">0</button>
+            <p style="text-align:center;color:white;font-family:Segoe UI;font-size:10px;margin-top:-1">One number is correct but wrong placed</p>
+        </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#unlock').hide();
+            $('button').click(function(){
+                f1 = $(this).text();
+               cone = document.getElementById('cone');
+               ctwo = document.getElementById('ctwo');
+               cthree = document.getElementById('cthree');
+                if(cone.innerHTML == ''){
+                    cone.innerHTML = f1;
+                }
+                else if(ctwo.innerHTML == ''){
+                    ctwo.innerHTML = f1;
+                }
+                else if(cthree.innerHTML == ''){
+                    cthree.innerHTML = f1;
+                    if(cone.innerHTML == '0' && ctwo.innerHTML == '4' && cthree.innerHTML == '2'){
+                $('#lock').hide();
+                $('#unlock').show();
+            }
+                }
+            });
+            $('#lock').click(function(){
+                cone.innerHTML = '';
+                ctwo.innerHTML = '';
+                cthree.innerHTML = '';
+            });
+            $('#unlock').click(function(){
+                cone.innerHTML = '';
+                ctwo.innerHTML = '';
+                cthree.innerHTML = '';
+                $('#unlock').hide();
+                $('#lock').show();
+            });
+            
+        })
+    
+    </script>
+</body>
+
+
+</html>
