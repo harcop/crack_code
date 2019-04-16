@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <title>Untitled Document</title>
+	<meta name="Author" content=""/>
+	<link rel="stylesheet" type="text/css" href="style.css">
+    
+    <style>
+       *{outline:none;}
+        body{
+            background:url(img/bg.png) no-repeat;background-size:cover;text-decoration:none;cursor:pointer;
+        }
+        #crack_title{
+            color:#fff;
+            font-weight:bold;
+            font-family:tahoma;
+            font-size:80px;
+            text-align:center
+        }
+        #lock_p{
+            text-align:center
+        }
+        .unlock_hide{
+            display:none;
+        }
+        .num_box{
+            border:none;
+            height:50px;
+            width:50px;
+            border-radius:3px;
+            box-shadow:0px .1px 1px 1px #f2f2d3;
+        }
+        .num_box1{
+            border:none;
+            height:50px;
+            width:50px;
+            border-radius:3px;
+            box-shadow:0px .1px 1px 1px #f2f2d3;
+            margin:5px;
+        }
+        #num_box_p{
+            text-align:center;
+            margin-top:30px;
+        }
+        #hint_desc{
+            color:#562734;
+            font-weight:bold;
+            font-family:tahoma;
+            font-size:30px;
+            text-align:center
+        }
+        #hint_txt{
+            background:#4C232F;
+            border:none;
+            padding:5px 20px;
+            color:#90323F;
+            border-radius:10px;
+            font-size:40px;
+            font-weight:bold
+        }
+        
+    </style>
+</head>
+<body>
+
+<div id="main">
+    <div id="main_c">
+        <div id="crack_title">CRACK THE CODE</div>
+        <div id="lock_p">
+            <img src="img/lock.svg" id='lock' width="10%"><br>
+            <img src="img/unlock.svg" id='unlock' width="10%" class="unlock_hide">
+        </div>
+        <div id="num_box_p">
+            <button class="num_box"></button>
+            <button class="num_box"></button>
+            <button class="num_box"></button>
+        </div>
+        
+        <div id="hint_desc">
+            <p>CODE</p>
+            <p>A NUMERICAL HAS A 3 DIGIT KEY</p>
+            <button id="hint_txt">HINT</button>
+        </div>
+        
+        <style>
+            #hint_box_p{
+                display:grid;
+                grid-template-columns:repeat(3,20%);
+                justify-items:center;
+/*
+                width:40%;
+                margin:0 auto;
+*/
+            }
+            .hint_box{
+                width:200px;
+/*                height:150px;*/
+                background:#542734;
+                border-radius:10px;
+                padding:30px;
+                text-align:center;
+            }
+            .hint_clue{
+                margin-top:10px;
+                color:#fff;
+            }
+        </style>
+        <div id="hint_box_p">
+            <div class="hint_box">
+                <div class="hint_box_c">
+                    <button class="num_box1">4</button>
+                    <button class="num_box1">4</button>
+                    <button class="num_box1">4</button>
+                    <div class="hint_clue">
+                        <span>One number is correct and well placed</span>
+                    </div>
+                </div>
+            </div><div class="hint_box">
+                <div class="hint_box_c">
+                    <button class="num_box1">4</button>
+                    <button class="num_box1">4</button>
+                    <button class="num_box1">4</button>
+                    <div class="hint_clue">
+                        <span>One number is correct and well placed</span>
+                    </div>
+                </div>
+            </div><div class="hint_box">
+                <div class="hint_box_c">
+                    <button class="num_box1">4</button>
+                    <button class="num_box1">4</button>
+                    <button class="num_box1">4</button>
+                    <div class="hint_clue">
+                        <span>One number is correct and well placed</span>
+                    </div>
+                </div>
+            </div><div class="hint_box">
+                <div class="hint_box_c">
+                    <button class="num_box1">4</button>
+                    <button class="num_box1">4</button>
+                    <button class="num_box1">4</button>
+                    <div class="hint_clue">
+                        <span>One number is correct and well placed</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hint_box">
+                <div class="hint_box_c">
+                    <button class="num_box1">4</button>
+                    <button class="num_box1">4</button>
+                    <button class="num_box1">4</button>
+                    <div class="hint_clue">
+                        <span>One number is correct and well placed</span>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+        
+    </div>
+    
+</div>
+
+</body>
+</html>
