@@ -72,9 +72,9 @@
             <img src="img/unlock.svg" id='unlock' width="10%" class="unlock_hide">
         </div>
         <div id="num_box_p">
-            <button class="num_box"></button>
-            <button class="num_box"></button>
-            <button class="num_box"></button>
+            <button class="num_box ans1"></button>
+            <button class="num_box ans2"></button>
+            <button class="num_box ans3"></button>
         </div>
         
         <div id="hint_desc">
@@ -84,18 +84,24 @@
         </div>
         
         <style>
-            #hint_box_p{
+            #hint_box_p1{
                 display:grid;
-                grid-template-columns:repeat(3,20%);
+/*                grid-template-columns:repeat(1,auto);*/
                 justify-items:center;
-/*
-                width:40%;
-                margin:0 auto;
-*/
+                grid-template-areas:
+                    '. . . . . . . . . . . . . . . . . . . . . . bx1 bx2 bx3 . . . . . . . . . . . . . . . . . . . . .';
+                margin-top:30px
+            }
+            #hint_box_p2{
+                display:grid;
+/*                grid-template-columns:repeat(1,auto);*/
+                justify-items:center;
+                grid-template-areas:
+                    '. . . . . . . . . . . . . . . . . . . . . . . . . . . . bx4 bx5 . . . . . . . . . . . . . . . . . . . . . . . . . . . .';
+                margin-top:30px
             }
             .hint_box{
                 width:200px;
-/*                height:150px;*/
                 background:#542734;
                 border-radius:10px;
                 padding:30px;
@@ -105,56 +111,65 @@
                 margin-top:10px;
                 color:#fff;
             }
+            .bx1{grid-area:bx1;}
+            .bx2{grid-area:bx2;}
+            .bx3{grid-area:bx3;}
+            .bx4{grid-area:bx4;}
+            .bx5{grid-area:bx5;}
         </style>
-        <div id="hint_box_p">
-            <div class="hint_box">
+        <div id="hint_box_p1">
+            <div class="hint_box bx1">
                 <div class="hint_box_c">
-                    <button class="num_box1">4</button>
-                    <button class="num_box1">4</button>
-                    <button class="num_box1">4</button>
+                    <button class="num_box1 hint_btn1"></button>
+                    <button class="num_box1 hint_btn2"></button>
+                    <button class="num_box1 hint_btn3"></button>
                     <div class="hint_clue">
-                        <span>One number is correct and well placed</span>
-                    </div>
-                </div>
-            </div><div class="hint_box">
-                <div class="hint_box_c">
-                    <button class="num_box1">4</button>
-                    <button class="num_box1">4</button>
-                    <button class="num_box1">4</button>
-                    <div class="hint_clue">
-                        <span>One number is correct and well placed</span>
-                    </div>
-                </div>
-            </div><div class="hint_box">
-                <div class="hint_box_c">
-                    <button class="num_box1">4</button>
-                    <button class="num_box1">4</button>
-                    <button class="num_box1">4</button>
-                    <div class="hint_clue">
-                        <span>One number is correct and well placed</span>
-                    </div>
-                </div>
-            </div><div class="hint_box">
-                <div class="hint_box_c">
-                    <button class="num_box1">4</button>
-                    <button class="num_box1">4</button>
-                    <button class="num_box1">4</button>
-                    <div class="hint_clue">
-                        <span>One number is correct and well placed</span>
+                        <span class="hint_txt1"></span>
                     </div>
                 </div>
             </div>
-            <div class="hint_box">
+            <div class="hint_box bx2">
                 <div class="hint_box_c">
-                    <button class="num_box1">4</button>
-                    <button class="num_box1">4</button>
-                    <button class="num_box1">4</button>
+                    <button class="num_box1 hint_btn4"></button>
+                    <button class="num_box1 hint_btn5"></button>
+                    <button class="num_box1 hint_btn6"></button>
                     <div class="hint_clue">
-                        <span>One number is correct and well placed</span>
+                        <span class="hint_txt2">One number is correct and well placed</span>
                     </div>
                 </div>
             </div>
-            
+            <div class="hint_box bx3">
+                <div class="hint_box_c">
+                    <button class="num_box1 hint_btn7"></button>
+                    <button class="num_box1 hint_btn8"></button>
+                    <button class="num_box1 hint_btn9"></button>
+                    <div class="hint_clue">
+                        <span class="hint_txt3">One number is correct and well placed</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="hint_box_p2">
+            <div class="hint_box bx4">
+                <div class="hint_box_c bx1">
+                    <button class="num_box1 hint_btn10"></button>
+                    <button class="num_box1 hint_btn11"></button>
+                    <button class="num_box1 hint_btn12"></button>
+                    <div class="hint_clue">
+                        <span class="hint_txt4">One number is correct and well placed</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hint_box bx5">
+                <div class="hint_box_c">
+                    <button class="num_box1 hint_btn13"></button>
+                    <button class="num_box1 hint_btn14"></button>
+                    <button class="num_box1 hint_btn15"></button>
+                    <div class="hint_clue">
+                        <span class="hint_txt5">One number is correct and well placed</span>
+                    </div>
+                </div>
+            </div>
         </div>
         
         
@@ -162,5 +177,83 @@
     
 </div>
 
-</body>
+    
+    <script src="js/jquery.min.js"></script>
+    <script>
+        var anses = [];
+        $('.hint_box_c button').click(function(){
+            var ans = $(this).text();
+            anses.push(ans);
+            if($('.ans1').text() == ''){
+               $('.ans1').html(ans); 
+            }else if($('.ans2').text() == ''){
+                $('.ans2').html(ans); 
+            }else if($('.ans3').text() == ''){
+                $('.ans3').html(ans); 
+                var f_ans = anses.join("");
+                if(f_ans == puz.f_ans){
+                    $('#lock').addClass('unlock_hide');
+                    $('#unlock').removeClass('unlock_hide');
+                }
+            }
+        })
+        $('#lock').click(function(){
+            $('.num_box').html('');
+            anses = [];
+//            $('#lock').addClass('unlock_hide');
+//            $('#unlock').removeClass('unlock_hide');
+        })
+        $('#unlock').click(function(){
+            $('.num_box').html('');
+            anses = [];
+            $('#unlock').addClass('unlock_hide');
+            $('#lock').removeClass('unlock_hide');
+        })
+    </script>
+    <script>
+        var puz ={
+            puzz:'puz1',
+            num:{
+                hint:[
+                    6,8,2,
+                    6,1,4,
+                    2,0,6,
+                    7,8,5,
+                    7,8,0
+                ]
+            },
+            txt:{
+                txt:[
+                    'One number is correct and well placed',
+                    'One number is correct but wrong placed',
+                    'Two numbers are correct but wrong placed',
+                    'Nothing is correct',
+                    'One number is correct but wrong placed'
+                     ]
+            },
+            f_ans:'042'
+        }
+    </script>
+    
+    <script>
+//        val load
+        $(document).ready(function(){
+//            alert(puz.num.hint1[0]);
+//            alert(puz.num.hint1);
+            for(i=1;i<=5;i++){
+                p = (i * 3);
+                x = p - 2;
+                y = p - 1;
+                z = p;
+                
+            $('.hint_btn' + x).html(puz.num.hint[p-3]);
+            $('.hint_btn' + y).html(puz.num.hint[p-2]);
+            $('.hint_btn' + z).html(puz.num.hint[p-1]);
+            $('.hint_txt'+i).html(puz.txt.txt[i-1]);
+            }
+        })
+        
+    </script>
+    
+    </body>
 </html>
