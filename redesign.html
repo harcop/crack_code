@@ -1,6 +1,9 @@
 <!-- get company logo in grey color -->
 <!-- https://www.polleverywhere.com/audience-response-system/?ref=PIW0qgbZ&campaignid=1640986510&adgroupid=63221930306&keyword=%2Binteractive%20%2Bquiz&matchtype=b&device=c&keywordid=kwd-327999720915&gclid=Cj0KCQjw-tXlBRDWARIsAGYQAmff83uEXXdgqZ2DYLNs5XfNu7kxH9KkBu0NslIdAA2cyeZxSlzSqOEaAtZEEALw_wcB -->
 <!-- https://www.polleverywhere.com/ -->
+<!-- get company logo in grey color -->
+<!-- https://www.polleverywhere.com/audience-response-system/?ref=PIW0qgbZ&campaignid=1640986510&adgroupid=63221930306&keyword=%2Binteractive%20%2Bquiz&matchtype=b&device=c&keywordid=kwd-327999720915&gclid=Cj0KCQjw-tXlBRDWARIsAGYQAmff83uEXXdgqZ2DYLNs5XfNu7kxH9KkBu0NslIdAA2cyeZxSlzSqOEaAtZEEALw_wcB -->
+<!-- https://www.polleverywhere.com/ -->
 <!DOCTYPE html>
 <html lang="">
 <head>
@@ -13,6 +16,7 @@
        *{outline:none;}
         body{
             background:url(img/bg.png) no-repeat;background-size:cover;text-decoration:none;cursor:pointer;
+/*            width:40%;*/
         }
         #crack_title{
             color:#fff;
@@ -62,13 +66,22 @@
             font-size:40px;
             font-weight:bold
         }
-        
+        #main_c{
+            display:grid;
+            grid-template-columns:auto auto;
+        }
+        #side2{
+            display:grid;
+            grid-template-rows:auto;
+            align-items:center;
+        }
     </style>
 </head>
 <body>
 
 <div id="main">
     <div id="main_c">
+        <div id="side1">
         <div id="crack_title">CRACK THE CODE</div>
         <div id="lock_p">
             <img src="img/lock.svg" id='lock' width="10%"><br>
@@ -85,7 +98,7 @@
             <p>A NUMERICAL HAS A 3 DIGIT KEY</p>
             <button id="hint_txt">HINT</button>
         </div>
-        
+        </div>
         <style>
             #hint_box_p1{
                 display:grid;
@@ -120,6 +133,8 @@
             .bx4{grid-area:bx4;}
             .bx5{grid-area:bx5;}
         </style>
+        <div id="side2">
+            <div>
         <div id="hint_box_p1">
             <div class="hint_box bx1">
                 <div class="hint_box_c">
@@ -174,7 +189,8 @@
                 </div>
             </div>
         </div>
-        
+            </div>
+        </div>
         
     </div>
     
